@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.menuButton {
+  border: none;
+  background-color: transparent;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.menuButton:hover {
+  background-color: antiquewhite;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: small;
+  }
+  .mat-expansion-panel-header {
+    font-size: small;
+  }
+  .menuButton {
+  
+    font-size: small;
+  }
+  
+  .menuButton:hover {
+    background-color: antiquewhite;
+    font-size: small;
+  }
+
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

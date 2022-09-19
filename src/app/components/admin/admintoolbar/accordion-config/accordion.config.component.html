@@ -1,0 +1,27 @@
+<mat-accordion multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Configurações</mat-panel-title>
+        <mat-panel-description class="justify-content-end">
+          <mat-icon fontIcon="settings"></mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <!--  [routerLink]="['/admin/rules']" -->
+      <button mat-button class="w-100 menuButton">
+        <div class="d-flex justify-content-between m-2">
+          <div>Regras</div>
+          <mat-icon color="warn" fontIcon="rule_folder"></mat-icon>
+        </div>
+      </button>
+  
+      
+      <button mat-button class="w-100 menuButton" [routerLink]="['/admin/users']" >
+       
+        <div class="d-flex justify-content-between m-2">
+          <div>Usuários</div>
+          <mat-icon class="text-success" fontIcon="account_circle"></mat-icon>
+        </div>
+      </button>
+    </mat-expansion-panel>
+  </mat-accordion>
