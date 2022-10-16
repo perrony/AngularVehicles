@@ -1,0 +1,66 @@
+<mat-accordion multi>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Administração</mat-panel-title>
+      <mat-panel-description class="justify-content-end">
+        <mat-icon fontIcon="admin_panel_settings"></mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+   
+     <button mat-button class="w-100 menuButton" [routerLink]="['/admin/company']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Empresa</span>
+        <mat-icon color="primary" fontIcon="apartment"></mat-icon>
+      </div>
+    </button>
+
+   
+    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/people']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Pessoas</span>
+        <mat-icon color="warn" fontIcon="perm_contact_calendar"></mat-icon>
+      </div>
+    </button>
+
+    
+    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/vehicleregistration']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Cadastro Veiculos</span>
+        <mat-icon color="primary">directions_car</mat-icon>
+      </div>
+    </button>
+
+   
+    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/stockvehicles']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Estoque Veiculos</span>
+        <mat-icon color="primary">directions_car</mat-icon>
+      </div>
+    </button>
+
+   
+    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/optionalvehicles']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Itens Opcionais</span>
+        <mat-icon color="primary">flaky</mat-icon>
+      </div>
+    </button>
+
+    
+    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/vehiclecolors']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Padrão de Cores</span>
+        <mat-icon color="primary">palette</mat-icon>
+      </div>
+    </button>
+
+ 
+    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/fipetable']">
+      <div class="d-flex justify-content-between m-2">
+        <span>Tabela Fipe</span>
+        <mat-icon class="text-success">price_check</mat-icon>
+      </div>
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

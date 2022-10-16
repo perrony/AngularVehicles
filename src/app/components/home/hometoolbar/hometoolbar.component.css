@@ -1,0 +1,65 @@
+.tool-icon {
+    border: none;
+    background: none;
+ }
+
+ .home-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tool-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .tool-icon {
+    border: none;
+    background: none;
+  }
+  
+  .mat-toolbar {
+    background-color: coral;
+    color: #ffffff;
+  }
+  
+  
+  
+  .sidebar-sidenav {
+    padding: 1.25rem;
+    max-width: 18.75rem;
+    height: 100%;
+  }
+
+  .sidebar-sidenav-content {
+     display: flex; 
+     max-width: 100%;
+     height: 100%; 
+     justify-content: center;
+   }
+   
+  
+  @media screen and (max-width: 600px) {
+  
+    .home-container {
+      font-size: small;
+    }
+  
+    .sidebar-sidenav {
+      padding: 0.2rem;
+      height: 100%;
+      max-width: 16.75rem;
+      font-size: small;
+    }
+  
+    .mat-toolbar {
+      background-color: coral;
+      color: #ffffff;
+      font-size: small;
+    }
+  
+    .mat-expansion-panel-header {
+      font-size: small;
+      font-weight: bold;
+    }
+  }
+  

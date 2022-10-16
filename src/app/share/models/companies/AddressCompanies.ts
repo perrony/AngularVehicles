@@ -1,16 +1,17 @@
 export interface IAddressCompanies {
     id: Number;
-    description: String;
-    complement:String;
-    unity:String;
-    ibge:String;
-    gia:String;
-    cep:String;
-    publicplace:String;
-    district:String;
-    locality:String;
-    uf:String;
-    siafi:String;
+    description: string;
+    complement:string;
+    number: string;
+    unity:string;
+    ibge:string;
+    gia:string;
+    cep:string;
+    publicplace:string;
+    district:string;
+    locality:string;
+    uf:string;
+    siafi:string;
     company_id:Number;
     user_id:Number;
 

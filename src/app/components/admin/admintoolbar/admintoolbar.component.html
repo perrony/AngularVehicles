@@ -1,4 +1,4 @@
- <title>{{ AppName }}</title>
+<title>{{ AppName }}</title>
 
 <mat-toolbar>
   <button mat-icon-button class="tool-icon">
@@ -11,52 +11,58 @@
   <span>{{ AppName }}</span>
 
   <span class="tool-spacer"></span>
-  <button mat-icon-button class="tool-icon">
-    <mat-icon fontIcon="facebook" style="color: #ffffff"></mat-icon>
-  </button>
+
   <button
     mat-icon-button
     class="tool-icon"
-    routerLinkActive="router-link-active">
-    <mat-icon fontIcon="admin_panel_settings" style="color: #ffffff"></mat-icon>
+    routerLinkActive="router-link-active"
+    [routerLink]="['/home']">
+    <mat-icon fontIcon="home" style="color: #ffffff"></mat-icon>
   </button>
+
+  <button
+    mat-button
+    [matMenuTriggerFor]="menuProfile"
+    aria-label="Example icon-button with a menu">
+    <mat-icon>account_circle</mat-icon>
+    <span class="user">{{ this.user?.name }}</span>
+  </button>
+
+  <mat-menu #menuProfile="matMenu">
+    <button mat-menu-item [routerLink]="['/admin/profile']">
+      <mat-icon>manage_accounts</mat-icon>
+      <span>Perfil</span>
+    </button>
+    <button mat-menu-item (click)="onLogout()">
+      <mat-icon>logout</mat-icon>
+      <span>Entrar com outro usuário</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>
 
 <mat-drawer-container class="home-container" autosize>
-  <mat-drawer #drawer class="sidebar-sidenav" mode="side"> 
-
-    <button mat-button class="w-100 menuButton" [routerLink]="['/admin/dashboard']">
+  <mat-drawer #drawer class="sidebar-sidenav" mode="side">
+    <button
+      mat-button
+      class="w-100 menuButton"
+      [routerLink]="['/admin/dashboard']">
       <div class="d-flex justify-content-between m-2">
         <div class="ps-2">Dashboard</div>
         <div>
-          <mat-icon color="warn" class="text-primary" fontIcon="space_dashboard"></mat-icon>
+          <mat-icon
+            color="warn"
+            class="text-primary"
+            fontIcon="space_dashboard"></mat-icon>
         </div>
       </div>
-
     </button>
 
-
-    <app-accordion-admin></app-accordion-admin>
+    <app-accordion-management></app-accordion-management>
     <app-accordion-financial></app-accordion-financial>
     <app-accordion-config></app-accordion-config>
-      
-
   </mat-drawer>
 
-  <div class="sidebar-sidenav-content">
+  <div>
     <router-outlet></router-outlet>
   </div>
-
 </mat-drawer-container>
-
-
-
-
-
-
-
-
-
-
-
-

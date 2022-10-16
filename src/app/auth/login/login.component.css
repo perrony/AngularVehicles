@@ -1,0 +1,19 @@
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: url(../../../assets/background.jpg) no-repeat;
+  background-size: 100%;
+}
+
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  color: blue;
+}
+
+input[type='checkbox'] + label {
+  left: -10px;
+}

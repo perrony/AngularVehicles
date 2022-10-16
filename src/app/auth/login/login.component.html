@@ -1,0 +1,72 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+<div class="registerContainer">
+  <div class="card shadow w-50 mx-auto">
+    <div class="mx-auto m-5">Log In</div>
+    <div class="row m-5">
+      <form class="user" [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <div class="row px-3">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Endereço de Email</mat-label>
+            <input
+              matInput
+              placeholder="Insira um email válido"
+              formControlName="email" />
+          </mat-form-field>
+        </div>
+
+        <div class="row px-3">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input
+              matInput
+              type="password"
+              placeholder="Digite sua senha"
+              formControlName="password" />
+          </mat-form-field>
+        </div>
+
+        <div class="row mx-3">
+          <div class="col-sm-6 px-0 d-flex align-items-center">
+            <div>
+              <a [routerLink]="['/reset']" class="ml-auto mb-0 text-sm"
+                >Esqueceu a senha?</a
+              >
+            </div>
+          </div>
+
+          <div class="col-sm-6 px-0 d-flex justify-content-end">
+            <button
+              mat-raised-button
+              type="submit"
+              color="primary"
+              [disabled]="this.loginForm.invalid">
+              <mat-icon fontIcon="login"></mat-icon>
+              Login
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-4 px-3 justify-content-center">
+          <small class="font-weight-bold"
+            >Ainda não está registrado?
+            <a class="text-danger" [routerLink]="['/register']">Registre-se</a>
+          </small>
+        </div>
+      </form>
+    </div>
+
+    <div class="row m-0 py-3 bg-warning">
+      <div class="w-75">
+        <small
+          >Copyright &copy; Scheffer Consultoria - 2022. All rights
+          reserved.</small
+        >
+      </div>
+
+      <div class="w-25 d-flex align-items-center justify-content-end">
+        <mat-icon fontIcon="facebook"></mat-icon>
+        <mat-icon fontIcon="telegram"></mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

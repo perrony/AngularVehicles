@@ -6,7 +6,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: 'Kanit', sans-serif;
+  background-image: url(../src/assets/background.jpg) no-repeat;
 }
 
 .menuButton {
@@ -29,17 +30,11 @@ body {
     font-size: small;
   }
   .menuButton {
-  
     font-size: small;
   }
-  
+
   .menuButton:hover {
     background-color: antiquewhite;
     font-size: small;
   }
-
 }
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,159 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+<div *ngIf="isLoading"></div>
+<div class="container">
+  <div class="mt-5">
+    <div class="text-center p-3">
+      <h3>Dados da Empresa</h3>
+    </div>
+
+    <div *ngIf="isLoading">
+      <div class="row">
+        <div class="col">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+        </div>
+        <div class="col">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+        </div>
+        <div class="col">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+        </div>
+        <div class="col">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="companyForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Razão Social</mat-label>
+
+            <input
+              matInput
+              placeholder="Razão Social"
+              formControlName="social_reason" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Nome Fantasia</mat-label>
+            <input
+              matInput
+              placeholder="Nome Fantasia"
+              formControlName="fantasy_name" />
+            <ngx-skeleton-loader
+              count="1"
+              *ngIf="isLoading"></ngx-skeleton-loader>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>CNPJ</mat-label>
+            <input
+              matInput
+              placeholder="CNPJ"
+              formControlName="cnpj"
+              mask="00.000.000/0000-00" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Inscrição Estadual</mat-label>
+            <input
+              matInput
+              value=""
+              placeholder="Inscrição Estadual"
+              formControlName="state_registration" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Data de Abertura</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="start_date" />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>WebSite</mat-label>
+            <input
+              matInput
+              value=""
+              placeholder="WebSite"
+              formControlName="web_site" />
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <div class="d-flex justify-content-end">
+            <button mat-raised-button [disabled]="!this.companyForm.valid">
+              <mat-icon fontIcon="save"></mat-icon>
+              Salvar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <mat-tab-group
+    mat-align-tabs="center"
+    *ngIf="this.companyForm.get('id')?.value != null">
+    <mat-tab label="Endereços">
+      <app-address-company
+        [company]="this.companyForm.get('id')?.value"></app-address-company>
+    </mat-tab>
+
+    <mat-tab label="Contatos">
+      <!--   <app-contatos [empresa]="this.companyForm.get('id')?.value"></app-contatos> -->
+    </mat-tab>
+
+    <mat-tab label="Tipos de Contatos">
+      <!-- <app-tipo-contato [empresa]="this.companyForm.get('id')?.value"></app-tipo-contato> -->
+    </mat-tab>
+  </mat-tab-group>
+</div>

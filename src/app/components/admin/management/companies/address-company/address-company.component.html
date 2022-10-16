@@ -1,0 +1,118 @@
+<div class="container mt-3">
+  <!-- Inclusão de novo Endereco-->
+
+  <button mat-raised-button class="ms-3 bg-success text-light" (click)="openForm(null)">
+    <mat-icon fontIcon="add_circle"></mat-icon>
+    Adicionar Endereço
+  </button>
+
+  <!-- inicio for -->
+  <div class="row w-100" *ngFor="let address of addressCompany">
+    <div class="row w-100">
+      <div class="col-sm-5 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Descrição</mat-label>
+          <input
+            matInput
+            placeholder="Descrição"
+            value="{{ address.description }}"
+            readonly />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-5 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Complemento</mat-label>
+          <input
+            matInput
+            placeholder="Complemento"
+            value="{{ address.complement }}"
+            readonly />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-2 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Número</mat-label>
+          <input
+            matInput
+            placeholder="Número"
+            value="{{ address.unity }} "
+            readonly />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row w-100">
+      <div class="col-sm-2 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>CEP</mat-label>
+          <input
+            matInput
+            placeholder="CEP"
+            value=" {{ address.cep }}"
+            readonly />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Logradouro</mat-label>
+          <input
+            matInput
+            placeholder="Logradouro"
+            value=" {{ address.publicplace }}"
+            readonly />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Bairro</mat-label>
+          <input
+            matInput
+            placeholder="Bairro"
+            value="{{ address.district }}"
+            readonly />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row w-100">
+      <div class="col-sm-6 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Cidade</mat-label>
+          <input matInput placeholder="Cidade" value="{{ address.locality }}" />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Estado</mat-label>
+          <input
+            matInput
+            placeholder="Estado"
+            value="{{ address.uf }}"
+            readonly />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3 mb-3 mb-sm-0 border p-1 rounded">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>IBGE</mat-label>
+          <input
+            matInput
+            placeholder="Ibge"
+            value="{{ address.ibge }}"
+            readonly />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row w-100 justify-content-end">
+      <button
+        mat-mini-fab
+        color="accent"
+        class="m-1"
+        (click)="openForm(address)">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="warn" class="m-1" (click)="onDelete(address)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <!-- fim for -->
+</div>

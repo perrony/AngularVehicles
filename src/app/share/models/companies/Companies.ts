@@ -1,4 +1,4 @@
-export interface Companies {
+export interface ICompanies {
     id: Number;
     social_reason: String;
     fantasy_name: String;

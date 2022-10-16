@@ -1,0 +1,184 @@
+<div class="containerAddress">
+  <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+  <h1 class="h4 text-gray-900 mb-4 text-center">Dados do Endereço</h1>
+  <div class="p-5">
+
+  
+
+    <form
+      [formGroup]="formAddress"
+      (ngSubmit)="onSubmit()"
+      >
+      <input
+        type="hidden"
+        class="form-control"
+        id="company_id"
+        name="company_id"
+        formControlName="company_id" />
+      <input
+        type="hidden"
+        class="form-control"
+        id="user_id"
+        name="user_id"
+        formControlName="user_id" />
+
+ 
+
+    
+      <div class="form-group row">
+        <div class="col-sm-5 mb-3 mb-sm-0">
+        
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Descrição</mat-label>
+              <input
+                matInput
+                placeholder="Descrição"
+                formControlName="description" />
+            </mat-form-field>
+          
+       
+          
+        </div>
+
+        <div class="col-sm-5 mb-3 mb-sm-0">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Complemento</mat-label>
+            <input
+              matInput
+              placeholder="Complemento"
+              formControlName="complement" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-2 mb-3 mb-sm-0">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Número</mat-label>
+            <input matInput placeholder="Número" formControlName="number" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-2 mb-3 mb-sm-0">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>CEP</mat-label>
+            <input
+              matInput
+              placeholder="CEP"
+              formControlName="cep"
+              mask="00.000-000"
+              (blur)="findCep()" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div *ngIf="!isLoading">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Logradouro</mat-label>
+            <input
+              matInput
+              placeholder="Logradouro"
+              formControlName="publicplace" />
+            </mat-form-field>
+          </div>
+
+          <div *ngIf="isLoading">
+            <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+          </div>
+        </div>
+
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div *ngIf="!isLoading">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Bairro</mat-label>
+              <input matInput placeholder="Bairro" formControlName="district" />
+            </mat-form-field>
+          </div>
+          <div *ngIf="isLoading">
+            <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div *ngIf="!isLoading">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Cidade</mat-label>
+            <input matInput placeholder="Cidade" formControlName="locality" />
+          </mat-form-field>
+        </div>
+          <div *ngIf="isLoading">
+            <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+          </div>
+        </div>
+
+        <div class="col-sm-3 mb-3 mb-sm-0">
+          <div *ngIf="!isLoading">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Estado</mat-label>
+            <input matInput placeholder="Estado" formControlName="uf" />
+          </mat-form-field>
+        </div>
+          <div *ngIf="isLoading">
+            <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+          </div>
+        </div>
+
+        <div class="col-sm-3 mb-3 mb-sm-0">
+          <div *ngIf="!isLoading">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>IBGE</mat-label>
+            <input matInput placeholder="Ibge" formControlName="ibge" />
+          </mat-form-field>
+        </div>
+          <div *ngIf="isLoading">
+            <ngx-skeleton-loader
+            count="1"
+            *ngIf="isLoading"
+            [theme]="{ height: '3rem' }"></ngx-skeleton-loader>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-* mb-3 mb-sm-0 p-4">
+          <mat-dialog-actions>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="!this.formAddress.valid">
+              <mat-icon fontIcon="save"></mat-icon>
+              Salvar
+            </button>
+
+            <button
+              mat-raised-button
+              color="warn"
+              mat-dialog-close
+              type="button"
+              class="m-2"
+              type="button">
+              <mat-icon fontIcon="cancel"></mat-icon>
+              Cancelar
+            </button>
+          </mat-dialog-actions>
+        </div>
+      </div>
+   
+    </form>
+  </div>
+</div>

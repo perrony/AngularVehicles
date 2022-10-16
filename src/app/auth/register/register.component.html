@@ -1,0 +1,118 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+<div class="registerContainer">
+  <div class="card shadow mx-auto w-75">
+    <div class="d-flex justify-content-center">
+      <div class="card-title">
+        <h2 class="p-4">Registre-se</h2>
+      </div>
+    </div>
+
+    <div class="mt-0 mx-5">
+      <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+        <div class="row px-3 mb-1">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Nome</mat-label>
+              <input
+                matInput
+                formControlName="name"
+                placeholder="Nome do Usuário" />
+            </mat-form-field>
+          </div>
+
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Sobrenome</mat-label>
+              <input
+                matInput
+                formControlName="lastName"
+                placeholder="Sobrenome" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row px-3 mb-1">
+          <div class="col-sm-5 mb-3 mb-sm-0">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>CPF</mat-label>
+              <input
+                matInput
+                formControlName="cpf"
+                placeholder="Insira seu CPF" />
+            </mat-form-field>
+          </div>
+
+          <div class="col-sm-7 mb-3 mb-sm-0">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                formControlName="email"
+                placeholder="Insira um email válido" />
+            </mat-form-field>
+            <div class="text-info"></div>
+          </div>
+        </div>
+
+        <div class="row px-3 mb-1">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Senha</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="password"
+                placeholder="Digite sua senha" />
+            </mat-form-field>
+          </div>
+
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Confirmação</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="confirmPassword"
+                placeholder="Confirme sua senha"
+                (blur)="viewForm()" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row mt-0 mx-3 mb-4">
+          <div class="col-sm-6 d-flex align-items-center px-0">
+            <small class="font-weight-bold"
+              >Já tem registro?
+              <a class="text-danger" [routerLink]="['/login']">Log In</a>
+            </small>
+          </div>
+          <div
+            class="col-sm-6 d-flex justify-content-end align-items-center px-0">
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="!registerForm.valid">
+              <mat-icon fontIcon="save"></mat-icon>
+              Registrar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row m-0 py-3 bg-warning">
+      <div class="w-75">
+        <small
+          >Copyright &copy; Scheffer Consultoria - 2022. All rights
+          reserved.</small
+        >
+      </div>
+
+      <div class="w-25 d-flex align-items-center justify-content-end">
+        <mat-icon fontIcon="facebook"></mat-icon>
+        <mat-icon fontIcon="telegram"></mat-icon>
+      </div>
+    </div>
+    
+  </div>
+</div>

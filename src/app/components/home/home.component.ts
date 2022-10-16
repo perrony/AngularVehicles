@@ -10,11 +10,12 @@ const APP_NAME = environment.APP_NAME;
 })
 export class HomeComponent implements OnInit {
 
-  AppName = APP_NAME;
+  AppName: string = APP_NAME;
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
