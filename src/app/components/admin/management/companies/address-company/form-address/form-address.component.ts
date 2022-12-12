@@ -13,12 +13,7 @@ import { SearchCepService } from 'src/app/share/services/global/searchcep.servic
 export class FormAddressComponent implements OnInit {
 
   isLoading: boolean = false;
-  users: IUsers = {
-    id: 1,
-    name: 'Ladislau Scheffer Perrony',
-    email: 'perrony.ls@gmail.com'
-  }
-
+  users!: IUsers;
   formAddress!: FormGroup;
 
   constructor(
